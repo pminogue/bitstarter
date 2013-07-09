@@ -3,7 +3,7 @@ var app = express.createServer(express.logger());
 var fs = require("fs");
 var file = "index.html";
 
-fs.stat(fileName, function(error, stats) {
+fs.stat(file, function(error, stats) {
 	fs.open(file, "r", function(error, fd) {
 		var buffer = new Buffer(stats.size);
 		fs.read(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
